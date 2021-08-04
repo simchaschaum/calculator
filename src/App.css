@@ -1,38 +1,143 @@
-.App {
+body {
+  background-image: url(https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1000px) {
+  body {
+    background-image: none;
+  }
+}
+
+#container {
+  max-width: 50vw;
+  max-height: 60vh;
+  margin: auto;
+}
+
+@media (max-width: 1000px) {
+  #container {
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 20%;
+  }
+}
+
+#fullDisplay {
+  box-shadow: 0.5px 0.5px 5px;
+  border-radius: 5px;
+  min-height: 200px;
+  padding-top: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background: linear-gradient(135deg, #ffffff 0%, #919191 100%);
+  margin-bottom: 20px;
+  /*   min-height: 100px; */
+}
+@media (max-width: 1000px) {
+  #fullDisplay {
+    height: 200px;
+  }
+}
+
+#display {
+  text-align: right;
+  font-family: "Roboto";
+  text-align: right;
+  font-size: 100px;
+  text-shadow: 1px 1px 2px;
+  overflow: hidden;
+}
+@media (max-width: 1000px) {
+  #display {
+    font-size: 100px;
+  }
+}
+
+#display2 {
+  text-align: right;
+  font-family: "Roboto";
+  text-align: right;
+  font-size: 50px;
+  text-shadow: 1px 1px 2px;
+}
+
+.keys {
+  box-shadow: 0.5px 0.5px 3px;
+  font-size: 4em;
+  font-family: "Roboto";
   text-align: center;
+  padding-top: 10%;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #ffffff 0%, #919191 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.keys:hover {
+  background: linear-gradient(135deg, #dbdbdb 0%, #919191 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.keys:active {
+  transform: translatey(5px);
+}
+
+@media (max-width: 1000px) {
+  .keys {
+    font-size: 50px;
+    padding-top: 45%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#KeyContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-template-rows: repeat(5, 100px);
+  grid-row-gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 1000px) {
+  #KeyContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-template-rows: repeat(5, 200px);
+    grid-row-gap: 30px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.numKeys {
+  background: linear-gradient(135deg, #dbdbdb 0%, #2181c2 50%, #919191 100%);
+}
+
+/* Placing the operator keys in the grid: */
+#add {
+  grid-row-start: 1;
+  grid-column-start: 4;
+}
+#subtract {
+  grid-row-start: 2;
+  grid-column-start: 4;
+}
+#multiply {
+  grid-row-start: 3;
+  grid-column-start: 4;
+}
+#divide {
+  grid-row-start: 4;
+  grid-column-start: 4;
+}
+#equals {
+  padding-top: 5%;
+  grid-row-start: 5;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  font-size: 50px;
+}
+@media (max-width: 1000px) {
+  #equals {
+    font-size: 100px;
+    padding-top: 10%;
   }
 }
